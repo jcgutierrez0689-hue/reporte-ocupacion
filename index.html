@@ -48,9 +48,10 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 6px;
+    overflow-x: auto;
   }
   .week-btn {
-    flex: 1;
+    flex: 1 0 90px;
     font-family: 'Syne', sans-serif;
     font-size: 0.72rem;
     font-weight: 600;
@@ -63,6 +64,7 @@
     transition: background 0.18s, color 0.18s;
     background: transparent;
     color: var(--text-muted);
+    white-space: nowrap;
   }
   .week-btn:hover { color: var(--text-primary); background: var(--surface-2); }
   .week-btn.active { background: var(--accent); color: #0A0A0A; }
@@ -264,7 +266,8 @@
     <button class="week-btn" id="btn-19" onclick="showWeek(19)">Semana 19</button>
     <button class="week-btn" id="btn-20" onclick="showWeek(20)">Semana 20</button>
     <button class="week-btn" id="btn-21" onclick="showWeek(21)">Semana 21</button>
-    <button class="week-btn active" id="btn-22" onclick="showWeek(22)">Semana 22</button>
+    <button class="week-btn" id="btn-22" onclick="showWeek(22)">Semana 22</button>
+    <button class="week-btn active" id="btn-23" onclick="showWeek(23)">Semana 23</button>
   </div>
 
   <!-- ═══════════════ SEMANA 15 ═══════════════ -->
@@ -965,7 +968,7 @@
   </div>
 
   <!-- ═══════════════ SEMANA 22 ═══════════════ -->
-  <div id="view-22" class="report-view" style="display:block;">
+  <div id="view-22" class="report-view" style="display:none;">
 
     <div class="header">
       <div>
@@ -1046,7 +1049,7 @@
         <tbody>
           <tr><td><span class="area-pill pill-op">Operaciones</span></td><td><span class="proj-tag">O-ST3</span></td><td>Facturación adicional</td><td>2 h</td></tr>
           <tr><td></td><td><span class="proj-tag">O-SV8</span></td><td>Revisión y reunión de seguimiento semanal</td><td>2 h</td></tr>
-          <tr><td></td><td><span class="proj-tag">O-SMR</span></td><td>6to ingreso elaboración de carpetas más materiales y gestiones catering</td><td>9 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">O-SMR</span></td><td>Elaboración de certificación más materiales y gestiones catering</td><td>9 h</td></tr>
           <tr><td><span class="area-pill pill-co">Comercial</span></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Gestión de seguros</td><td>2 h</td></tr>
           <tr><td></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Oxbow - reunión - cierre demo y siguientes pasos</td><td>4 h</td></tr>
           <tr><td></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Reunión - capacitación Vertix</td><td>4 h</td></tr>
@@ -1062,6 +1065,103 @@
     <div class="footer">
       <span>Juan Carlos Gutierrez</span>
       <span>Semana 22 &nbsp;·&nbsp; 1–5 junio 2026</span>
+      <span>Objetivo: 45 h</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SEMANA 23 ═══════════════ -->
+  <div id="view-23" class="report-view" style="display:block;">
+
+    <div class="header">
+      <div>
+        <div class="header-eyebrow">Reporte de ocupación</div>
+        <div class="header-name">Juan Carlos<br>Gutierrez</div>
+      </div>
+      <div class="header-right">
+        <span class="week-tag">Semana 23</span>
+        <span class="date-tag">8 – 12 junio 2026</span>
+        <span class="status-tag">Objetivo cumplido</span>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <span class="card-label">Horas registradas</span>
+        <div class="kpi-value">45</div>
+        <div class="kpi-sub">de 45 h objetivo</div>
+      </div>
+      <div class="kpi-card">
+        <span class="card-label">Cumplimiento</span>
+        <div class="kpi-value accent">100%</div>
+        <div class="kpi-sub">sin desvío</div>
+      </div>
+      <div class="kpi-card">
+        <span class="card-label">Proyectos activos</span>
+        <div class="kpi-value">4</div>
+        <div class="kpi-sub">en 2 áreas</div>
+      </div>
+    </div>
+
+    <div class="progress-card">
+      <div class="progress-header">
+        <span class="card-label" style="margin-bottom:0;">Progreso semanal</span>
+        <span class="progress-nums">45 / 45 h</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" style="width:100%;"></div></div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-card">
+        <span class="card-label">Horas por área</span>
+        <div class="area-bars">
+          <div>
+            <div class="area-bar-header"><span class="area-bar-name">Operaciones</span><span class="area-bar-val">23 h</span></div>
+            <div class="area-bar-track"><div class="area-bar-fill" style="width:100%;background:var(--op);"></div></div>
+          </div>
+          <div>
+            <div class="area-bar-header"><span class="area-bar-name">Comercial</span><span class="area-bar-val">22 h</span></div>
+            <div class="area-bar-track"><div class="area-bar-fill" style="width:96%;background:var(--co);"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <span class="card-label">Distribución por proyecto</span>
+        <div style="position:relative;height:148px;margin-top:14px;">
+          <canvas id="donut23"></canvas>
+        </div>
+        <div class="legend-col">
+          <div class="legend-item"><div class="legend-left"><span class="legend-dot" style="background:#F09060;"></span>V-PRO-BOL</div><span class="legend-val">22 h</span></div>
+          <div class="legend-item"><div class="legend-left"><span class="legend-dot" style="background:#60A8F0;"></span>O-SMR</div><span class="legend-val">18 h</span></div>
+          <div class="legend-item"><div class="legend-left"><span class="legend-dot" style="background:#C8F060;"></span>O-SV8</div><span class="legend-val">3 h</span></div>
+          <div class="legend-item"><div class="legend-left"><span class="legend-dot" style="background:#C060F0;"></span>O-ST3</div><span class="legend-val">2 h</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-header-bar"><span class="card-label" style="margin-bottom:0;">Detalle de tareas</span></div>
+      <div style="overflow-x:auto;">
+      <table>
+        <thead><tr><th style="width:20%">Área</th><th style="width:13%">Proyecto</th><th>Tarea</th><th style="width:8%">Horas</th></tr></thead>
+        <tbody>
+          <tr><td><span class="area-pill pill-op">Operaciones</span></td><td><span class="proj-tag">O-ST3</span></td><td>Certificación adicional y coordinación curso Lenel con proveedores y cliente</td><td>2 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">O-SV8</span></td><td>Revisión y reunión de seguimiento semanal para coordinación de cierre</td><td>3 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">O-SMR</span></td><td>Elaboración carpetas, 6to ingreso más materiales y gestiones catering</td><td>18 h</td></tr>
+          <tr><td><span class="area-pill pill-co">Comercial</span></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Oxbow elaboración alcance técnico y propuesta económica</td><td>9 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Elaboración temario y alcance capacitación redes industriales</td><td>2 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Paraguay horas estimación</td><td>2 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Gestión seguros Terminal SCZ y seguro pendiente obras civiles Arica</td><td>2 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Oferta Riberalta, reunión y presentación al cliente. Se propuso Canary; siguiente paso: armar el pliego con el cliente</td><td>5 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Reunión Repsol metodología de certificación nuevo sistema</td><td>2 h</td></tr>
+          <tr class="total-row"><td colspan="3" style="text-align:right;">Total semana</td><td>45 h</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Juan Carlos Gutierrez</span>
+      <span>Semana 23 &nbsp;·&nbsp; 8–12 junio 2026</span>
       <span>Objetivo: 45 h</span>
     </div>
   </div>
@@ -1159,9 +1259,18 @@ new Chart(document.getElementById('donut22'), {
   options: donutOpts(45)
 });
 
+new Chart(document.getElementById('donut23'), {
+  type: 'doughnut',
+  data: {
+    labels: ['V-PRO-BOL','O-SMR','O-SV8','O-ST3'],
+    datasets: [{ data: [22,18,3,2], backgroundColor: ['#F09060','#60A8F0','#C8F060','#C060F0'], borderWidth: 0, hoverOffset: 4 }]
+  },
+  options: donutOpts(45)
+});
+
 // ── Selector ──
 function showWeek(n) {
-  [15,16,17,18,19,20,21,22].forEach(w => {
+  [15,16,17,18,19,20,21,22,23].forEach(w => {
     document.getElementById('view-' + w).style.display = n === w ? 'block' : 'none';
     document.getElementById('btn-' + w).classList.toggle('active', n === w);
   });
