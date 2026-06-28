@@ -268,7 +268,8 @@
     <button class="week-btn" id="btn-21" onclick="showWeek(21)">Semana 21</button>
     <button class="week-btn" id="btn-22" onclick="showWeek(22)">Semana 22</button>
     <button class="week-btn" id="btn-23" onclick="showWeek(23)">Semana 23</button>
-    <button class="week-btn active" id="btn-24" onclick="showWeek(24)">Semana 24</button>
+    <button class="week-btn" id="btn-24" onclick="showWeek(24)">Semana 24</button>
+    <button class="week-btn active" id="btn-25" onclick="showWeek(25)">Semana 25</button>
   </div>
 
   <!-- ═══════════════ SEMANA 15 ═══════════════ -->
@@ -1168,7 +1169,7 @@
   </div>
 
   <!-- ═══════════════ SEMANA 24 ═══════════════ -->
-  <div id="view-24" class="report-view" style="display:block;">
+  <div id="view-24" class="report-view" style="display:none;">
 
     <div class="header">
       <div>
@@ -1256,6 +1257,104 @@
     <div class="footer">
       <span>Juan Carlos Gutierrez</span>
       <span>Semana 24 &nbsp;·&nbsp; 15–19 junio 2026</span>
+      <span>Objetivo: 45 h</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ SEMANA 25 ═══════════════ -->
+  <div id="view-25" class="report-view" style="display:block;">
+
+    <div class="header">
+      <div>
+        <div class="header-eyebrow">Reporte de ocupación</div>
+        <div class="header-name">Juan Carlos<br>Gutierrez</div>
+      </div>
+      <div class="header-right">
+        <span class="week-tag">Semana 25</span>
+        <span class="date-tag">22 – 26 junio 2026</span>
+        <span class="status-tag">Objetivo cumplido</span>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <span class="card-label">Horas registradas</span>
+        <div class="kpi-value">45</div>
+        <div class="kpi-sub">de 45 h objetivo</div>
+      </div>
+      <div class="kpi-card">
+        <span class="card-label">Cumplimiento</span>
+        <div class="kpi-value accent">100%</div>
+        <div class="kpi-sub">sin desvío</div>
+      </div>
+      <div class="kpi-card">
+        <span class="card-label">Proyectos activos</span>
+        <div class="kpi-value">5</div>
+        <div class="kpi-sub">en 2 áreas</div>
+      </div>
+    </div>
+
+    <div class="progress-card">
+      <div class="progress-header">
+        <span class="card-label" style="margin-bottom:0;">Progreso semanal</span>
+        <span class="progress-nums">45 / 45 h</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" style="width:100%;"></div></div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-card">
+        <span class="card-label">Horas por área</span>
+        <div class="area-bars">
+          <div>
+            <div class="area-bar-header"><span class="area-bar-name">Operaciones</span><span class="area-bar-val">23 h</span></div>
+            <div class="area-bar-track"><div class="area-bar-fill" style="width:100%;background:var(--op);"></div></div>
+          </div>
+          <div>
+            <div class="area-bar-header"><span class="area-bar-name">Comercial</span><span class="area-bar-val">22 h</span></div>
+            <div class="area-bar-track"><div class="area-bar-fill" style="width:96%;background:var(--co);"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <span class="card-label">Distribución por proyecto</span>
+        <div style="position:relative;height:148px;margin-top:14px;">
+          <canvas id="donut25"></canvas>
+        </div>
+        <div class="legend-col">
+          <div class="legend-item"><div class="legend-left"><span class="legend-dot" style="background:#F09060;"></span>V-PRO-BOL</div><span class="legend-val">22 h</span></div>
+          <div class="legend-item"><div class="legend-left"><span class="legend-dot" style="background:#60A8F0;"></span>O-SV8</div><span class="legend-val">9 h</span></div>
+          <div class="legend-item"><div class="legend-left"><span class="legend-dot" style="background:#A0A09A;"></span>I-OPE-BOL</div><span class="legend-val">10 h</span></div>
+          <div class="legend-item"><div class="legend-left"><span class="legend-dot" style="background:#C8F060;"></span>O-ST3</div><span class="legend-val">2 h</span></div>
+          <div class="legend-item"><div class="legend-left"><span class="legend-dot" style="background:#C060F0;"></span>O-SMR</div><span class="legend-val">2 h</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-header-bar"><span class="card-label" style="margin-bottom:0;">Detalle de tareas</span></div>
+      <div style="overflow-x:auto;">
+      <table>
+        <thead><tr><th style="width:20%">Área</th><th style="width:13%">Proyecto</th><th>Tarea</th><th style="width:8%">Horas</th></tr></thead>
+        <tbody>
+          <tr><td><span class="area-pill pill-op">Operaciones</span></td><td><span class="proj-tag">O-ST3</span></td><td>Facturación y OC Lenel Capacitación acorde a reunión trimestral</td><td>2 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">O-SV8</span></td><td>Atención de observaciones de ingeniería. Aplicar estrategias comerciales para el pliego</td><td>9 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">O-SMR</span></td><td>Envío de carpetas a campo y facturación. Reuniones enmienda del catering</td><td>2 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">I-OPE-BOL</span></td><td>Feriado</td><td>9 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">I-OPE-BOL</span></td><td>Entrevista pasantes</td><td>1 h</td></tr>
+          <tr><td><span class="area-pill pill-co">Comercial</span></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Gestión seguros Terminal Santa Cruz. Reunión para emisión de TRE</td><td>1 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Gestión de cotización y revisión pliegos ELFEC</td><td>18 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Reunión YPFB Refinación Matto PAU</td><td>1 h</td></tr>
+          <tr><td></td><td><span class="proj-tag">V-PRO-BOL</span></td><td>Revisión horas servicio Argentina</td><td>2 h</td></tr>
+          <tr class="total-row"><td colspan="3" style="text-align:right;">Total semana</td><td>45 h</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>Juan Carlos Gutierrez</span>
+      <span>Semana 25 &nbsp;·&nbsp; 22–26 junio 2026</span>
       <span>Objetivo: 45 h</span>
     </div>
   </div>
@@ -1371,9 +1470,18 @@ new Chart(document.getElementById('donut24'), {
   options: donutOpts(45)
 });
 
+new Chart(document.getElementById('donut25'), {
+  type: 'doughnut',
+  data: {
+    labels: ['V-PRO-BOL','I-OPE-BOL','O-SV8','O-ST3','O-SMR'],
+    datasets: [{ data: [22,10,9,2,2], backgroundColor: ['#F09060','#A0A09A','#60A8F0','#C8F060','#C060F0'], borderWidth: 0, hoverOffset: 4 }]
+  },
+  options: donutOpts(45)
+});
+
 // ── Selector ──
 function showWeek(n) {
-  [15,16,17,18,19,20,21,22,23,24].forEach(w => {
+  [15,16,17,18,19,20,21,22,23,24,25].forEach(w => {
     document.getElementById('view-' + w).style.display = n === w ? 'block' : 'none';
     document.getElementById('btn-' + w).classList.toggle('active', n === w);
   });
